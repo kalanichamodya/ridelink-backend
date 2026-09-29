@@ -1,0 +1,22 @@
+server:
+  port: ${PORT:8081}
+  address: ${BIND_ADDRESS:127.0.0.1}
+spring:
+  application:
+    name: account-service
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
+      database: ${ACCOUNT_MONGODB_DATABASE:ridelink_account}
+      uuid-representation: standard
+      auto-index-creation: true
+ridelink:
+  jwt-secret: ${JWT_SECRET}
+  service-key: ${SERVICE_API_KEY}
+  account-url: ${ACCOUNT_URL:http://127.0.0.1:8081}
+  driver-url: ${DRIVER_URL:http://127.0.0.1:8082}
+  ride-url: ${RIDE_URL:http://127.0.0.1:8083}
+  fare-url: ${FARE_URL:http://127.0.0.1:8084}
+springdoc:
+  swagger-ui:
+    persist-authorization: false
